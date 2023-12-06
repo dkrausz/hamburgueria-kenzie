@@ -1,0 +1,10 @@
+.header{
+    height: 5rem;
+     display: flex;
+    justify-content: space-between;
+    padding-inline: 7.5rem ;
+
+    & img{
+    width: 9.3rem;
+}
+}

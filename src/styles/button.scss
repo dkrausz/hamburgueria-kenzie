@@ -1,0 +1,15 @@
+.button {
+  height: 3.75rem;
+  width: 8.125rem;
+  background-color: #bdbdbd;
+  color: #ffffff;
+  font-weight: 600;
+
+  &sm {
+    height: 2.5rem;
+  }
+
+  &hover {
+    background-color: var(--color-secondary);
+  }
+}

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
+import style from "./style.module.scss"
 
 export const Header = () => {
    const [value, setValue] = useState("");
 
    return (
-      <header>
+      <header className={style.header}>
          <img src={Logo} alt="Logo Kenzie Burguer" />
          <div>
             <button>

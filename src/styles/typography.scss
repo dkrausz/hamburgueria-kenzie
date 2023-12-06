@@ -1,0 +1,22 @@
+.title {
+  color: var(--color-gray-600);
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem; /* 133.333% */
+}
+
+.paragraph {
+  color: var(--color-gray-300);
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: normal;
+
+  &price {
+    color: var(--color-primary);
+    font-weight: 600;
+    line-height: 1.5rem; /* 171.429% */
+  }
+}
+
