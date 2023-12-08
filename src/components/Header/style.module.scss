@@ -1,10 +1,41 @@
-.header{
-    height: 5rem;
-     display: flex;
-    justify-content: space-between;
-    padding-inline: 7.5rem ;
+.header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 7.5rem;
 
-    & img{
+  & img {
     width: 9.3rem;
+  }
 }
+
+// div{
+//     position: relative;
+//     background-color:beige ;
+// }
+.cart__button {
+  position: relative;
+  background-color: transparent;
+  color: #bdbdbd;
+  border: none;
+
+  width: 1.5rem;
+
+  & span {
+    position: absolute;
+
+    top: -9px;
+    right: -13px;
+    width: 1.2rem;
+    height: 1.2rem;
+
+    background-color: var(--color-primary);
+    border-radius: 0.4375rem;
+    color: #ffffff;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
 }

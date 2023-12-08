@@ -1,9 +1,15 @@
+@import url(./global.scss);
+
 .title {
   color: var(--color-gray-600);
   font-family: var(--font-primary);
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.5rem; /* 133.333% */
+  &.two{
+    color: #FFFFFF;
+
+  }
 }
 
 .paragraph {
@@ -13,10 +19,21 @@
   font-weight: 400;
   line-height: normal;
 
-  &price {
+  &.price{
     color: var(--color-primary);
     font-weight: 600;
     line-height: 1.5rem; /* 171.429% */
+   
+  }
+
+  &.bold{
+    font-weight: 600;
+
+    &.dark{
+      color: var(--color-gray-600);
+    }
   }
 }
+
+
 

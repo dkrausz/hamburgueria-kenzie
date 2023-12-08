@@ -1,15 +1,20 @@
+
 .button {
   height: 3.75rem;
   width: 8.125rem;
   background-color: #bdbdbd;
   color: #ffffff;
+  font-size: 1rem;
   font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: var(--font-primary);
 
-  &sm {
+  &.sm {
     height: 2.5rem;
   }
 
-  &hover {
-    background-color: var(--color-secondary);
+  &:hover {
+    background-color: var(--color-primary);
   }
 }
