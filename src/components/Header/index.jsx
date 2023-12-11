@@ -3,8 +3,8 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import style from "./style.module.scss";
 
-export const Header = ({ setVisibleModal }) => {
-  const [value, setValue] = useState("");
+export const Header = ({ setVisibleModal, cartSize }) => {
+  
 
   return (
     <header className={style.header}>
@@ -14,7 +14,7 @@ export const Header = ({ setVisibleModal }) => {
           onClick={() => setVisibleModal(true)}
           className={style.cart__button} >
           <MdShoppingCart size={24} />
-          <span>0</span>
+          <span>{cartSize}</span>
         </button>
       
     </header>

@@ -1,7 +1,7 @@
 import "../../../styles/index.scss"
 import style from "./style.module.scss"
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product ,addCart}) => {
     return(
         <li className={style.container}>
             <img src={product.img} alt={product.name} />
@@ -9,7 +9,7 @@ export const ProductCard = ({ product }) => {
                 <h3 className="title">{product.name}</h3>
                 <span className="paragraph">{product.category}</span>
                 <span className="paragraph price">{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
-                <button className="button sm">Adicionar</button>
+                <button className="button sm" onClick={()=>addCart(product)}>Adicionar</button>
             </div>
         </li>
     )

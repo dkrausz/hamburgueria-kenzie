@@ -1,19 +1,18 @@
 .header {
+  max-width: 100rem;
+  margin: auto;
   height: 5rem;
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   align-items: center;
-  padding-inline: 7.5rem;
+  padding-inline: clamp(1rem ,4rem, 6rem) ;
+  padding-right: clamp(1rem, 5rem, 7.5rem);
 
   & img {
     width: 9.3rem;
   }
 }
 
-// div{
-//     position: relative;
-//     background-color:beige ;
-// }
 .cart__button {
   position: relative;
   background-color: transparent;
@@ -38,4 +37,11 @@
     font-weight: 600;
     text-align: center;
   }
+}
+@media(max-width:475px){
+  .header{
+    padding-inline: 1rem;
+    padding-right: 1.4rem;
+  }
+
 }

@@ -1,9 +1,22 @@
 .container{
+  width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-inline:8rem ;
+    margin-inline: clamp(1rem,4rem, 6rem) ;
     margin-block: 2rem;
-    gap: 4rem;
+    gap: 3rem;
 
 
 }
+
+@media(max-width:475px){
+    .container{
+        width: 100%;
+        margin-inline: 0rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-inline: 1rem;
+      
+    }
+  
+  }

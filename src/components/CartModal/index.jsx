@@ -3,7 +3,7 @@ import { CartItemCard } from "./CartItemCard";
 import style from "./style.module.scss";
 import "../../styles/index.scss";
 
-export const CartModal = ({ cartList, setVisibleModal }) => {
+export const CartModal = ({ cartList, setVisibleModal,cleanCart,removeCart }) => {
   const total = cartList.reduce((prevValue, product) => {
     return prevValue + product.price;
   }, 0);
@@ -20,15 +20,14 @@ export const CartModal = ({ cartList, setVisibleModal }) => {
           >
             <MdClose size={21} />
           </button>
-        </div>
-        <div>
-          <ul>
-            {cartList.map((product) => (
-              <CartItemCard key={product.id} product={product} />
+        </div>      
+          <ul className={style.product__list}>
+            {cartList.map((product,index) => (
+              <CartItemCard key={index} product={product} index={index} removeCart={removeCart} />
             ))}
           </ul>
-        </div>
-        <div>
+        
+        <div className={style.lower__container}>
           <div className={style.total__container}>
             <span className="paragraph bold dark">Total</span>
             <span className="paragraph bold">
@@ -38,7 +37,7 @@ export const CartModal = ({ cartList, setVisibleModal }) => {
               })}
             </span>
           </div>
-          <button className="button">Remover todos</button>
+          <button className="button" onClick={()=>cleanCart()} >Remover todos</button>
         </div>
       </div>
     </div>

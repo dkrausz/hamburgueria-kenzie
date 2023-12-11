@@ -1,7 +1,7 @@
 
 .button {
   height: 3.75rem;
-  width: 8.125rem;
+  width: 100%;
   background-color: #bdbdbd;
   color: #ffffff;
   font-size: 1rem;
@@ -12,6 +12,7 @@
 
   &.sm {
     height: 2.5rem;
+    width: 8.125rem;
   }
 
   &:hover {
