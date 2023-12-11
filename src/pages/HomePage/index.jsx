@@ -6,29 +6,23 @@ import { productsAPI } from "../../services/api";
 import "../../styles/index.scss";
 
 export const HomePage = () => {
+  const localStorageData = JSON.parse(localStorage.getItem("@CartList"));  
   const [productList, setProductList] = useState([]);
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useState(localStorageData? localStorageData:[]);
   const [visibleModal, setVisibleModal] = useState(false);
   const [cartSize, setCartSize] = useState(0);
-  const [firstTime, SetFirstTime] = useState(true);
 
   const getProducts = async () => {
     const { data } = await productsAPI.get("/products");
     setProductList(data);
   };
 
-  const saveLocalStorage = () => {
-    if (firstTime == false) {
+  const saveLocalStorage = () => {   
       const cartListJson = JSON.stringify(cartList);
       localStorage.setItem("@CartList", cartListJson);
-    }
+    
   };
 
-  const getLocalStorage = () => {
-    const localStorageData = localStorage.getItem("@CartList");
-    const convertedData = JSON.parse(localStorageData);
-    setCartList(convertedData);
-  };
 
   const addCart = (newProduct) => {
     setCartList([...cartList, newProduct]);
@@ -41,7 +35,7 @@ export const HomePage = () => {
   };
 
   const updateCartSize = () => {
-    setCartSize(cartList.length);
+   setCartSize(cartList.length);
     saveLocalStorage();
   };
 
@@ -50,9 +44,7 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    getProducts();
-    getLocalStorage();
-    SetFirstTime(false);
+    getProducts();      
   }, []);
 
   useEffect(() => {
