@@ -6,9 +6,11 @@ import { productsAPI } from "../../services/api";
 import "../../styles/index.scss";
 
 export const HomePage = () => {
-  const localStorageData = JSON.parse(localStorage.getItem("@CartList"));  
+  const localStorageData = JSON.parse(localStorage.getItem("@CartList"));
   const [productList, setProductList] = useState([]);
-  const [cartList, setCartList] = useState(localStorageData? localStorageData:[]);
+  const [cartList, setCartList] = useState(
+    localStorageData ? localStorageData : []
+  );
   const [visibleModal, setVisibleModal] = useState(false);
   const [cartSize, setCartSize] = useState(0);
 
@@ -17,25 +19,46 @@ export const HomePage = () => {
     setProductList(data);
   };
 
-  const saveLocalStorage = () => {   
-      const cartListJson = JSON.stringify(cartList);
-      localStorage.setItem("@CartList", cartListJson);
-    
+  const saveLocalStorage = () => {
+    const cartListJson = JSON.stringify(cartList);
+    localStorage.setItem("@CartList", cartListJson);
   };
-
 
   const addCart = (newProduct) => {
-    setCartList([...cartList, newProduct]);
+    const itemCart = cartList.find((element) => element.id == newProduct.id);
+    if (itemCart) {
+      const newCartList = [...cartList];
+      const index = newCartList.findIndex((element)=>element.id==newProduct.id);
+      newCartList[index].qtty=itemCart.qtty + 1;
+      setCartList(newCartList);     
+    } else {
+      newProduct.qtty = 1;
+      setCartList([...cartList, newProduct]);
+    }
   };
 
-  const removeCart = (index) => {
-    const newCartList = [...cartList];
-    newCartList.splice(index, 1);
-    setCartList(newCartList);
+  const removeCart = (product) => {
+    if(product.qtty>1){     
+      const newCartList = [...cartList];
+      const index = newCartList.findIndex((element)=>element.id==product.id);
+      newCartList[index].qtty=product.qtty - 1;      
+      setCartList(newCartList);     
+    }
+    else{
+      const removedProduct = cartList.filter(
+        (element) => product.id !== element.id);
+      setCartList(removedProduct);
+    }
+  
   };
 
   const updateCartSize = () => {
-   setCartSize(cartList.length);
+
+    const total = cartList.reduce((prevValue, product) => {
+      return prevValue + product.qtty;
+    }, 0);
+
+    setCartSize(total);   
     saveLocalStorage();
   };
 
@@ -44,19 +67,13 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    getProducts();      
+    getProducts();
   }, []);
 
   useEffect(() => {
     updateCartSize();
   }, [cartList]);
 
-  // useEffect montagem - carrega os produtos da API e joga em productList
-  // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-  // adição, exclusão, e exclusão geral do carrinho
-  // renderizações condições e o estado para exibir ou não o carrinho
-  // filtro de busca
-  // estilizar tudo com sass de forma responsiva
 
   return (
     <>

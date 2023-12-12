@@ -3,6 +3,14 @@
     display: flex;
     justify-content: space-between;
     padding-inline: 1rem;
+    align-items: center;
+    
+    
+}
+
+.quantity{
+    text-align: end;
+    margin-left: auto;
 }
 
 .content{

@@ -5,8 +5,9 @@ import "../../styles/index.scss";
 
 export const CartModal = ({ cartList, setVisibleModal,cleanCart,removeCart }) => {
   const total = cartList.reduce((prevValue, product) => {
-    return prevValue + product.price;
+    return prevValue +(product.qtty* product.price);
   }, 0);
+
 
   return (
     <div role="dialog" className={style.overlay}>
@@ -22,8 +23,8 @@ export const CartModal = ({ cartList, setVisibleModal,cleanCart,removeCart }) =>
           </button>
         </div>      
           <ul className={style.product__list}>
-            {cartList.map((product,index) => (
-              <CartItemCard key={index} product={product} index={index} removeCart={removeCart} />
+            {cartList.map((product,index) => (               
+               <CartItemCard key={index} product={product} removeCart={removeCart} />                                                         
             ))}
           </ul>
         

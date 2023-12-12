@@ -20,7 +20,8 @@ export const CartItemCard = ({ product,removeCart,index }) => {
           </span>
         </div>
       </div>
-      <button aria-label="delete" title="Remover item" className={style.button} onClick={()=>removeCart(index)}>
+      <span className={style.quantity}>x{product.qtty}</span>
+      <button aria-label="delete" title="Remover item" className={style.button} onClick={()=>removeCart(product)}>
         <MdDelete size={21} />
       </button>
     </li>
