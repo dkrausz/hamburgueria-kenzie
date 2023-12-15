@@ -23,7 +23,7 @@ export const CartModal = ({
       }
     };
     const handleKeyDown = (event) => {
-      console.log(event.key);
+     
       if (event.key === "Escape") {
         setVisibleModal(false);
       }
