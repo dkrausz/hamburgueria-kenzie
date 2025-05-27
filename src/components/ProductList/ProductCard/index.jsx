@@ -2,6 +2,7 @@ import "../../../styles/index.scss"
 import style from "./style.module.scss"
 
 export const ProductCard = ({ product ,addCart}) => {
+   
     return(
         <li className={style.container}>
             <img src={product.img} alt={product.name} />

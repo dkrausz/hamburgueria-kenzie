@@ -17,6 +17,7 @@ export const HomePage = () => {
   const getProducts = async () => {
     const { data } = await productsAPI.get("/products");
     setProductList(data);
+    
   };
 
   const saveLocalStorage = () => {

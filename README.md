@@ -1,27 +1,78 @@
-## Sobre a entrega
+# 🛒 Projeto: Carrinho de Compras com React
 
-O objetivo desta é implementar um conjunto de funcionalidades e estilização a projeto existente, colocando em prática os conhecimentos aprendidos até aqui.
-Iremos acessar a lista de produto desta API e simularemos um carrinho de compras com React.
-Além disso, para praticar a estilização, a aplicação deverá ser semelhante a este Figma.
+Este projeto foi desenvolvido como parte do curso da Kenzie Academy. O objetivo é implementar funcionalidades e estilização em um projeto React existente, simulando o funcionamento de um e-commerce com integração à API de produtos e gerenciamento de carrinho de compras.
 
-## Instruções
-Comece realizando o clone do repositório. Diferente da entrega anterior, novamente, não partiremos da estaca zero, por isso, após o clone execute o npm install para baixar as dependências.
+---
 
-### 1. Estilização
-Todos os componentes da aplicação já estão prontos de forma básica, e novamente, utilizaremos o SASS para estilizar este projeto, por isso, o estilo pode ser um excelente ponto de partida. 
-Atente-se que, nessa entrega a responsividade vai ser obrigatória, por isso, chegou o momento de você aplicar tudo que aprendeu até agora.
+## 📋 Descrição
 
-### 2. Trazendo os produtos da API | Busca
-Um bom primeiro passo na lógica será utilizar o useEffect para trazer os produtos da API, fique atento, já existe um estado adequado para armazenar os produtos e também já foi feito um map do mesmo.
-Com os produtos vindo da API, uma funcionalidade interessante a desenvolver em seguida é a busca, observe que o formulário de busca já captura o que o usuário fornece.
+A aplicação permite ao usuário:
 
-### 3. Gerenciamento do carrinho | Modal
-De forma muito semelhante ao gerenciamento de transações na entrega anterior, trabalhe na lógica de adicionar e remover itens do carrinho, bem como imprimir os totais. Fique atento, diferente da entrega anterior, os produtos do carrinho virão da própria lista de produtos fornecida pela API.
+- Visualizar produtos obtidos de uma API externa;
+- Adicionar e remover itens no carrinho de compras;
+- Visualizar o total da compra;
+- Persistir os dados do carrinho com `localStorage`;
+- Interagir com um modal simples;
+- (Desafio) Utilizar comportamentos avançados no modal como fechar ao clicar fora ou pressionar a tecla `Esc`;
+- (Opcional) Implementar funcionalidade de busca por produto.
 
-Nessa etapa, com o gerenciamento funcionando de forma correta, valerá muito a pena utilizar o useEffect para persistir os dados do carrinho no localStorage.
+---
 
-### 4. Modal
-Para o modal, será exigido um comportamento simples de abertura e fechamento, aplique seu conhecimento de condicionais no JSX.
+## 🚀 Tecnologias Utilizadas
 
-### 5. Desafio - Refine o comportamento do seu modal
-Não é obrigatório, mas, caso você consiga, com base no que foi mostrado nos conteúdos extras, aplique os comportamentos de: fechar ao clicar fora e fechar ao clicar na "Esc" em seu modal, de preferência trabalhando com a criação de hooks para cada um destes comportamentos. Você consegue!
+- React
+- JavaScript (ES6+)
+- Sass (SCSS)
+- API de produtos
+
+---
+
+## 💡 Funcionalidades Implementadas
+
+- 🎯 Estilização baseada em Figma com SCSS
+- 📦 Listagem dinâmica de produtos com `useEffect`
+- 🛍️ Gerenciamento completo de carrinho (adicionar, remover, somar total)
+- 💾 Persistência de dados no `localStorage`
+- 🧩 Modal com comportamento condicional (abrir e fechar)
+- 🧪 (Extra) Modal com hooks personalizados para fechamento por clique externo ou tecla `Esc`
+
+---
+
+## 🖼️ Capturas de Tela
+
+### 💻 Versão Desktop
+
+![Versão Desktop](./src/assets/screens/desktop.jpg)
+
+---
+
+## 🖥️ Clonar o Projeto
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/dkrausz/hamburgueria-kenzie.git
+   ```
+
+2. Abra a pasta do projeto:
+
+   ```bash
+    cd hamburgueria-kenzie
+   ```
+
+3. Execute o comando
+
+   ```bash
+    npm run dev
+   ```
+
+## 🔗 Acesso ao Projeto
+
+- Repositório GitHub: [https://github.com/dkrausz/hamburgueria-kenzie](https://github.com/dkrausz/hamburgueria-kenzie)
+- Vercel Page: [https://react-entrega-s3-template-hamburgueria-dkrausz-75rjpl8fy.vercel.app/](https://react-entrega-s3-template-hamburgueria-dkrausz-75rjpl8fy.vercel.app/)
+
+---
+
+## 📝 Licença
+
+Este projeto é de uso educacional e não possui uma licença específica.
