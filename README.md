@@ -1,4 +1,4 @@
-# 🛒 Projeto: Menu de Hmaburgueria e carrinho de compras
+# 🛒 Projeto: Menu de Hamburgueria e carrinho de compras
 
 Este projeto foi desenvolvido como parte do curso da Kenzie Academy. O objetivo é implementar funcionalidades e estilização em um projeto React existente, simulando o funcionamento de um e-commerce com integração à API de produtos e gerenciamento de carrinho de compras.
 
